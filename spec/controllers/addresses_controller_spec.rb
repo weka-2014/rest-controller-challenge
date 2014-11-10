@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Addresses Controller" do
+describe "Addresses Controller", :type => :controller do
 
   before(:each) do
     @joe = Contact.create! name: "Joe Blow", email: "joeblow@example.com"
