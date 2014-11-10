@@ -31,3 +31,14 @@ do to get the RSpec tests passing.
 2.  `rake db:reset`
 3.  `rake db:test:prepare`
 4.  `rspec`
+  
+### Side Note about Sinatra and rendering sub-views
+You can organise your views in sub-directories as this project demonstrates. One tip, you'll need to use some new syntax to render a template inside a sub-directory. Here's an example:
+
+get "/posts" do
+  @posts = Post.all
+
+  erb :"posts/index"
+end
+
+The above syntax would look for a folder called `posts` in the `views` directory and a file in the `posts` directory called `index.erb`.
